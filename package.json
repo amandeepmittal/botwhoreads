@@ -8,14 +8,14 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start":"node bot.js",
+    "start": "node bot.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
     "node": "~6.1.0",
     "npm": "~.3.8.6"
   },
-  "keywords":[
+  "keywords": [
     "books",
     "nodejs",
     "reading",
@@ -24,10 +24,14 @@
     "bot",
     "twitter"
   ],
-  "bugs":{
-    "url":"https://github.com/amandeepmittal/botwhoreads/issues"
+  "bugs": {
+    "url": "https://github.com/amandeepmittal/botwhoreads/issues"
   },
   "author": "Aman Mittal",
   "license": "MIT",
-   "homepage": "https://github.com/amandeepmittal/botwhoreads#readme"
+  "homepage": "https://github.com/amandeepmittal/botwhoreads#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amandeepmittal/botwhoreads.git"
+  }
 }
