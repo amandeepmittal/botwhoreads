@@ -15,7 +15,7 @@ var
 var Twitter = new twit(config);
 
 // QUERY qString
-var qString = '#kindle OR #book OR #reading OR #AmReading OR #WritingTip OR #YA OR #RomanceWriter OR #IndieAuthors OR @NYTimesBooks OR @ElectricLit OR @LITCHAT OR #LitChat OR @MAUDNEWTON OR @BOOKRIOT OR @GUARDIANBOOKS OR @THE_MILLIONS OR @pageturner OR #AmWriting OR #AmEditing OR #reader OR #writers OR #fantasy OR #eReaders OR #Literature OR #WomensFiction OR #Poetry OR #AuthorRT OR @HuffPostBooks'
+var qString = '#kindle OR #book OR #reading OR #AmReading OR #WritingTip OR #YA OR #RomanceWriter OR #IndieAuthors OR @NYTimesBooks OR @ElectricLit OR @LITCHAT OR #LitChat OR @MAUDNEWTON OR @BOOKRIOT OR @GUARDIANBOOKS OR @THE_MILLIONS OR @pageturner OR #AmWriting OR #AmEditing OR #reader OR #writers OR #fantasy OR #Bookfession OR #Literature OR #WomensFiction OR #Poetry OR #AuthorRT OR @HuffPostBooks'
 
 // Welcome Console Message
 console.log("BotWhoReads Welcome to Twitter.");
