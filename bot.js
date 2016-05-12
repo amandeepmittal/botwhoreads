@@ -5,7 +5,7 @@
   - Favorite a tweet (every 30 minutes)
   - Randomly Follow Who Follows (every 1 hour)
   - Randomly Unfollow (every 10 hours)
-  - Recommeds a Book (ask #recommendbook)
+  - Recommends a Book (ask #recommendbook)
 */
 
 // Dependencies =========================
