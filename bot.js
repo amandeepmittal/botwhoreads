@@ -5,12 +5,14 @@
   - Favorite a tweet (every 30 minutes)
   - Randomly Follow Who Follows (every 1 hour)
   - Randomly Unfollow (every 10 hours)
+  - Recommeds a Book (ask #recommendbook)
 */
 
 // Dependencies =========================
 var
   twit = require('twit'),
-  config = require('./config');
+  config = require('./config'),
+  books = require('./books');
 
 var Twitter = new twit(config);
 
@@ -203,7 +205,7 @@ var unfollow = function () {
   });
 }
 // grab & unfollow
-unfollow();
+// unfollow();
 // 'unfollow' a user every 10 hours
 setInterval(unfollow, 36000000)
 
@@ -212,5 +214,42 @@ function ranDom(arr) {
   var index = Math.floor(Math.random()*arr.length);
   return arr[index];
 };
+
+// BOT INERACTIVITY: Book Recommendation ===================================
+// track own twitter handle
+var interActiveStream = Twitter.stream('statuses/filter', {track: '#recommendbook'});
+
+// open a stream
+interActiveStream.on('tweet', function (tweet) {
+  var
+    personName = tweet.user.screen_name,
+    book = randomBook(books);
+
+  // function that replies back to  USER  who asked for recommendation
+  tweetBack('@' + personName + ' How about: ' + book);
+});
+
+// function definitation of tweetBack() for USER asking recommendation
+function tweetBack(text) {
+  var tweet = {
+    status: text,
+    id: randomBook
+  }
+  // tweet back recommendation
+  Twitter.post('statuses/update', tweet, function (err,data, response) {
+    if(err){
+      console.log("Cannot Recommend. ERROR!");
+    }
+    else{
+      console.log('Recommended a book. SUCCESS!');
+    }
+  });
+}
+
+// functions to pick random books from books
+function randomBook (books) {
+  var index = Math.floor(Math.random()*books.length);
+  return books[index];
+}
 
 // EOP =============================
