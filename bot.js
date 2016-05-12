@@ -4,6 +4,7 @@
   - THANKYOU Reply to the followers (when followed)
   - Favorite a tweet (every 30 minutes)
   - Randomly Follow Who Follows (every 1 hour)
+  - Randomly Unfollow (every 10 hours)
 */
 
 // Dependencies =========================
@@ -23,7 +24,7 @@ console.log("BotWhoReads Welcome to Twitter.");
 // set up a user stream
 var stream = Twitter.stream('user');
 
-// FOLLOW BOT ============================
+// REPLY-FOLLOW BOT ============================
 // what to do when someone follows you?
 stream.on('follow', followed);
 
@@ -34,8 +35,8 @@ function followed(event) {
   var
     name = event.source.name,
     screenName = event.source.screen_name;
-    // function that replies back to every USER who followed for the first time
-    tweetNow('@' + screenName + ' Thank you. What are you reading today?');
+  // function that replies back to every USER who followed for the first time
+  tweetNow('@' + screenName + ' Thank you. What are you reading today?');
 }
 
 // function definition to tweet back to USER who followed
@@ -167,6 +168,44 @@ mingle();
 // 'friend' a follower every 1 hour
 setInterval(mingle, 3600000);
 
+// UNFOLLOW BOT ========================================
+var unfollow = function () {
+  // GET Followers ID
+  Twitter.get('followers/ids', function (err, data) {
+    if(err){
+      // if error while getting any follower
+      console.log('Cannot Find Follower. ERROR!');
+    }
+    // Get a Follower randomly
+    var
+      follower = data.ids,
+      randomUnfollow = ranDom(follower);
+    Twitter.get('friends/ids', {user_id: randomUnfollow}, function (err, response) {
+      // if error whle unfollowing
+      if(err){
+        console.log('Cannot Unfollow anyone. ERROR!');
+      }
+      // unfollow that friend
+      var
+        friend = response.ids,
+        unFriend = ranDom(friend);
+
+      Twitter.post('friendships/destroy', {id: unFriend}, function (err,response) {
+        // if error while unfollow
+        if(err){
+          console.log("Cannot Unfollow right now. ERROR!");
+        }
+        else{
+          console.log('Unfollowed. SUCCESS!');
+        }
+      });
+    });
+  });
+}
+// grab & unfollow
+unfollow();
+// 'unfollow' a user every 10 hours
+setInterval(unfollow, 36000000)
 
 // function to generate random tweet/follower/friend ==========
 function ranDom(arr) {

@@ -1,6 +1,6 @@
 {
   "name": "botwhoreads",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A Twitter bot for readers and writers.",
   "main": "bot.js",
   "dependencies": {
