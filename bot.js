@@ -215,7 +215,7 @@ function ranDom(arr) {
   return arr[index];
 };
 
-// BOT INERACTIVITY: Book Recommendation ===================================
+// BOT INNERACTIVITY: Book Recommendation ===================================
 // track own twitter handle
 var interActiveStream = Twitter.stream('statuses/filter', {track: '#recommendbook'});
 
