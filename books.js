@@ -261,8 +261,7 @@ var books = [
   "Great Expectations by Charles Dickens",
   "Miss Lonelyhearts by Nathanael West",
   "The Murder of Roger Ackroyd by Agatha Christie",
-  "The Kreutzer Sonata: And Other Stories by Leo Tolstoy",
-  ""
+  "The Kreutzer Sonata: And Other Stories by Leo Tolstoy"
 ]
 
 module.exports = books;
