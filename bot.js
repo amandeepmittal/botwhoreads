@@ -92,8 +92,8 @@ var retweet = function() {
 }
 // grab & retweet ASAP as program is running
 retweet();
-// retweet every 3 minutes
-setInterval(retweet, 180000);
+// retweet every 10 minutes
+setInterval(retweet, 600000);
 
 // FAVORITE BOT ==============================
 // find a random tweet and 'favorite' it
@@ -128,8 +128,8 @@ var favoriteTweet = function () {
 }
 // grab & 'favorite' a tweet ASAP program is running
 favoriteTweet();
-// 'favorite' a tweet every 30 minutes
-setInterval(favoriteTweet, 600000*3);
+// 'favorite' a tweet every 1 hour
+setInterval(favoriteTweet, 3600000);
 
 // FOLLOW THE FOLLOWER BOT=============================
 var mingle = function () {
@@ -206,8 +206,8 @@ var unfollow = function () {
 }
 // grab & unfollow
 // unfollow();
-// 'unfollow' a user every 10 hours
-setInterval(unfollow, 36000000)
+// 'unfollow' a user every 1 hour
+setInterval(unfollow, 3600000)
 
 // function to generate random tweet/follower/friend ==========
 function ranDom(arr) {
