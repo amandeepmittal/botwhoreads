@@ -1,4 +1,6 @@
 # botwhoreads
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/amandeepmittal/botwhoreads.svg)](https://greenkeeper.io/)
 A Twitter bot for readers and writers.
 
 
